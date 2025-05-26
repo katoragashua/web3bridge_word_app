@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  line-height: 1.6;
+  /* outline: solid 1px green; */
+  font-size: 15px;
+}
+
+:root {
+  font-family: "Manrope", sans-serif;
+  /* line-height: 1.5; */
+  font-weight: 400;
+  color: #979797;
+}
+
+/* Mask */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* overflow-x: hidden; */
+  /* line-height: 25px;
+  font-weight: bolder;
+  font-weight: 600; */
+}
+
+.container {
+  max-width: 90vw;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+form input {
+  border: solid 1px #979797;
+}
+
+form button {
+  background-color: black;
+  padding: 1rem 2rem;
+}
+
+a {
+  font-weight: 500;
+  color: black;
+  text-decoration: inherit;
+}
+a:hover {
+}
+
+h1 {
+  font-size: 3.73rem;
+  line-height: 3.86rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.6rem;
+  line-height: 2.9rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 2.13rem;
+  line-height: 2.4rem;
+  letter-spacing: 1.15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 1.87rem;
+  line-height: 2.53rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  letter-spacing: 1.7px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* grid-template-rows: auto auto; */
+  width: 100%;
+  gap: 2rem;
+  border: 5px solid #ccc;
+}
