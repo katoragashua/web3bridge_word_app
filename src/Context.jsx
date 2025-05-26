@@ -59,6 +59,16 @@ export const ContextProvider = ({ children }) => {
     words.splice(randomIndex, 1); // Remove the word from the list
   };
 
+  const handleHint = () => {
+    if (showHint) {
+      setShowHint(false);
+    } else {
+      setShowHint(true);
+    }
+  };
+
+  const handleInputChange = (e) => setGuess(e.target.value);
+
   const handleGuess = () => {
     if (guess.toLowerCase() === currentWord.toLowerCase()) {
       setCorrectGuesses((prev) => prev + 1);
@@ -100,10 +110,12 @@ export const ContextProvider = ({ children }) => {
         message,
         timeLeft,
         gameActive,
+        handleInputChange,
         scrambledFunction,
         handleGuess,
         nextWord,
         startGame,
+        handleHint,
       }}
     >
       {children}

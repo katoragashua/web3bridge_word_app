@@ -18,10 +18,11 @@ const Home = () => {
     message,
     timeLeft,
     gameActive,
-    scrambledFunction,
+    handleInputChange,
     handleGuess,
     nextWord,
     startGame,
+    handleHint,
   } = useContext(Context);
 
   return (
@@ -29,16 +30,21 @@ const Home = () => {
       <h1>Word Scramble Game</h1>
       <p>Unscramble the word below:</p>
       <button onClick={startGame}>Start Game</button>
+      <div className="timer-display">
+        {gameActive ? `Time Left: ${timeLeft}s` : "Game not started"}
+      </div>
       <div className="word-display">{scrambledWord || "Loading..."}</div>
-      <input type="text" placeholder="Your guess" onChange={handleGuess} />
+      <input type="text" placeholder="Your guess" onChange={handleInputChange} />
       <button
-      // onClick={checkGuess}
+      onClick={handleGuess}
       >
         Submit Guess
       </button>
-      <button onClick={() => setShowHint(!showHint)}>
+      <button onClick={handleHint}>
         {showHint ? "Hide Hint" : "Show Hint"}
       </button>
+      {showHint && <div className="hint-display">Hint: {hint}</div>}
+      {message && <div className="message-display" style={{color: "red"}}>{message}</div>}
       <button onClick={nextWord}>Next Word</button>
       <div className="score-display">
         {/* Display score and other game stats here */}
